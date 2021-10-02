@@ -2,6 +2,7 @@
   <div class="chatroom_name">ううう</div>
   <div class="close_chat"> <a href="#">チャットを終了する</a> </div>
 </div>
+
 <div class="chat_screen">
   <div class="chat_screen_container">
     <div class="messages">
@@ -15,16 +16,18 @@
       <div class="chat_text">おはよう！</div>
     </div>
   </div>
-  <div class="comment_area">
-    <div class="comment_container">
-      <div class="form-input">
-        <input class="message_field" type="text" name="message" placeholder="type a message">
-        <label class="form-image">
-          <span class="image-file">画像</span>
-          <input type="file" class="hidden">
-        </label>
-      </div>
-      <input class="submit" type="submit" name="submit" value="送信">
+</div>
+
+<div class="comment_area">
+  <%= form_with model: [@room, @message], class: 'comment_container', local: true do |f| %>
+    <div class="form-input">
+      <%= f.text_field :content, class: 'message_field', placeholder: 'type a message' %>
+      <%# <input class="message_field" type="text" name="message" placeholder="type a message"> %>
+      <label class="form-image">
+        <span class="image-file">画像</span>
+        <input type="file" class="hidden">
+      </label>
     </div>
-  </div>
+    <input class="submit" type="submit" name="submit" value="送信">
+  <% end %>
 </div>

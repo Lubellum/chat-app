@@ -14,7 +14,7 @@
 <div class="comment_area">
   <%= form_with model: [@room, @message], class: 'comment_container', local: true do |f| %>
     <div class="form-input">
-      <%= f.text_field :content, class: 'message_field', placeholder: 'type a message' %>
+      <%= f.text_field :content, class: 'message_field', placeholder: 'type a message', autofocus: true %>
       <label class="form-image">
         <span class="image-file">画像</span>
         <input type="file" class="hidden">

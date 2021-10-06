@@ -17,7 +17,7 @@
       <%= f.text_field :content, class: 'message_field', placeholder: 'type a message', autofocus: true %>
       <label class="form-image">
         <span class="image-file">画像</span>
-        <input type="file" class="hidden">
+        <%= f.file_field :image, class: 'hidden' %>
       </label>
     </div>
     <input class="submit" type="submit" name="submit" value="送信">

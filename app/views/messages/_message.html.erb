@@ -1,13 +1,12 @@
-<div class="messages">
-  <div class="message">
-    <div class="user_name">
-      <%= message.user.name %>
-    </div>
-    <div class="date_times">
-      <%= l message.created_at %>
-    </div>
-    <div class="chat_text">
-      <%= message.content %>
-    </div>
+<div class="message">
+  <div class="user_name">
+    <%= message.user.name %>
   </div>
+  <div class="date_times">
+    <%= l message.created_at %>
+  </div>
+  <div class="chat_text">
+    <%= message.content %>
+  </div>
+  <%= image_tag message.image.variant(resize: '500x500'), class: 'message-image' if message.image.attached? %>
 </div>
